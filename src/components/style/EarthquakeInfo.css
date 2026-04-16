@@ -1,0 +1,304 @@
+@keyframes appear {
+    0%{
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f4f7fb, #e9eef7);
+    color: #1f2937;
+}
+
+.earthquake-page {
+    /* opacity: 0; */
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /* animation-delay: 1s;
+    animation-name: appear;
+        animation-duration: 2s;
+    animation-fill-mode: forwards; */
+}
+
+.earthquake-container {
+    width: 100%;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+    padding: 32px;
+}
+
+.earthquake-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.earthquake-header h1 {
+    font-size: 2.2rem;
+    background: radial-gradient(rgb(49, 36, 36), rgb(99, 96, 96), rgb(4, 5, 5));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.earthquake-header p {
+    color: #64748b;
+    font-size: 1rem;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.earthquake-controls {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+}
+
+.primary-btn,
+.secondary-btn,
+.submit-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #2563eb, #183585, #000000);
+    color: white;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.primary-btn:hover {
+    background: white;
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    /* transform: translateY(-2px); */
+    box-shadow: 0 14px 24px rgba(37, 99, 235, 0.25);
+}
+
+.secondary-btn {
+    background: linear-gradient(215deg, #0f172a, #1e293b, #6385bb);
+    color: white;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
+}
+
+.secondary-btn:hover {
+    background: white;
+    border: 1px solid #0f172a;
+    color: #0f172a;
+    /* transform: translateY(-2px); */
+    box-shadow: 0 14px 24px rgba(15, 23, 42, 0.24);
+}
+
+.time-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    min-width: 260px;
+}
+
+.time-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.time-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-inputs input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    font-size: 0.95rem;
+    background: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.time-inputs input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    background: white;
+}
+
+.time-inputs span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #16a34a, #24713f, #075a25);
+    color: white;
+}
+
+.submit-btn:hover {
+    border: 1px solid #16a34a;
+    color: #16a34a;
+    background: white;
+    opacity: 0.75;
+    transition: opacity ease-in-out;
+    /* transform: translateY(-2px); */
+}
+
+.loading-box {
+    margin-top: 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #334155;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.earthquake-table-section {
+    margin-top: 10px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.earthquake-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.earthquake-table thead {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+}
+
+.earthquake-table th {
+    text-align: left;
+    padding: 16px 18px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.earthquake-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    font-size: 0.95rem;
+    vertical-align: top;
+}
+
+.earthquake-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.earthquake-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.earthquake-table tbody tr:nth-child(even) {
+    background: #fcfdff;
+}
+
+.no-data {
+    text-align: center;
+    padding: 24px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .earthquake-container {
+        padding: 20px;
+    }
+
+    .earthquake-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .earthquake-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .submit-btn {
+        width: 100%;
+    }
+
+    .time-form {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+.mapViewBtn{
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border-radius: 10%;
+    cursor: pointer;
+     text-decoration: none;
+    background: radial-gradient(rgb(49, 36, 36), rgb(99, 96, 96), rgb(4, 5, 5));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+#succDelete{
+    color: #00521e;
+}
+
+.error{
+    color: rgb(133, 6, 6);
+}
+
+.tmpWrapper{
+    margin-bottom: 1rem;
+}

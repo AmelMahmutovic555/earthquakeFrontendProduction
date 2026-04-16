@@ -1,0 +1,37 @@
+@keyframes fadeIn {
+    0%{
+        transform: translateY(-500%);
+    } 
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.headerEarthquake{
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    padding-top: 5rem;
+    
+}
+
+/* .headerEarthquake > div{
+      animation-name: fadeIn;
+        animation-duration: 3s;
+    animation-fill-mode: forwards;
+} */
+
+.headerEarthquake > div > *{
+            transform: translateY(-500%);
+
+    margin-bottom: 3rem;
+    background: radial-gradient(rgb(49, 36, 36), rgb(99, 96, 96), rgb(4, 5, 5));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+       animation-name: fadeIn;
+        animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
