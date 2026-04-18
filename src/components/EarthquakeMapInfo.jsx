@@ -21,7 +21,7 @@ export default function EarthquakeMapInfo(){
   useEffect(() => {
      async function getInfo() {
             try {
-                const result = await axios.get(`http://localhost:8080/`)
+                const result = await axios.get(`https://earthquakebackend.onrender.com`)
                 
                 setEarthquakes(result.data)
             } catch (error) {
