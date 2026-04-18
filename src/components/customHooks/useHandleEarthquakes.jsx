@@ -20,7 +20,7 @@ export default function useHandleEarthquakes(){
     useEffect(() => {
         async function getInfo() {
             try {
-                const result = await axios.get(`https://earthquakebackend.onrender.com`)
+                const result = await axios.get(`https://earthquakebackend.onrender.com/`)
                 
                 setEarthquakeInfo(result.data)
             } catch (error) {
@@ -37,7 +37,7 @@ export default function useHandleEarthquakes(){
           try {
                 setLoading(true);
 
-                const result = await axios.get(`http://localhost:8080/`)
+                const result = await axios.get(`https://earthquakebackend.onrender.com/`)
                 
                 setEarthquakeInfo(result.data)
             } catch (error) {
@@ -53,7 +53,7 @@ export default function useHandleEarthquakes(){
         try {
             setLoading(true);
 
-            const result = await axios.get(`http://localhost:8080/byMagnitude`);
+            const result = await axios.get(`https://earthquakebackend.onrender.com/byMagnitude`);
 
             setEarthquakeInfo(result.data)
         } catch (error) {
@@ -71,7 +71,7 @@ export default function useHandleEarthquakes(){
          try {
             setLoading(true);
 
-            const result = await axios.get(`http://localhost:8080/byTime/${formInfo.hour}/${formInfo.minute}`);
+            const result = await axios.get(`https://earthquakebackend.onrender.com/byTime/${formInfo.hour}/${formInfo.minute}`);
 
             setEarthquakeInfo(result.data)
         } catch (error) {
@@ -90,7 +90,7 @@ export default function useHandleEarthquakes(){
 
             setLoading(true);
 
-            const result = await axios.delete(`http://localhost:8080/delete/${formInfo.place}`);
+            const result = await axios.delete(`https://earthquakebackend.onrender.com/delete/${formInfo.place}`);
 
             localStorage.setItem("deletion", "Successfully deleted!");
 
