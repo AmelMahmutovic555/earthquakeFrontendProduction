@@ -1,4 +1,3 @@
-import EarthquakeInfo from "./EarthquakeInfo";
 import FilterEartquakeInfo from "./FilterEarthquakeInfo";
 import "./style/Header.css"
 export default function Home(){

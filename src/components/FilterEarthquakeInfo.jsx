@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
 import EarthquakeInfo from "./EarthquakeInfo";
 import "./style/EarthquakeInfo.css"
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import useHandleEarthquakes from "./customHooks/useHandleEarthquakes";
 
 export default function FilterEartquakeInfo(){
@@ -10,9 +8,6 @@ export default function FilterEartquakeInfo(){
         loading,
         earthquakeInfo
     } = useHandleEarthquakes();
-
-
-    const navigate = useNavigate()
 
 
 
