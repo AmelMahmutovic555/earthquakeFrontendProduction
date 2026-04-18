@@ -20,7 +20,7 @@ export default function useHandleEarthquakes(){
     useEffect(() => {
         async function getInfo() {
             try {
-                const result = await axios.get(`http://localhost:8080/`)
+                const result = await axios.get(`https://earthquakebackend.onrender.com`)
                 
                 setEarthquakeInfo(result.data)
             } catch (error) {
